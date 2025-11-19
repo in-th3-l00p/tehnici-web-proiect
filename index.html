@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Mitzanu</title>
+    <meta name="description" content="La Mitzanu - Authentic Italian spaghetti pasta restaurant in Brasov, Romania. Experience traditional Italian cuisine with fresh ingredients and warm hospitality.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Global">
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="mobile-menu-button">
+                    <button type="button" class="menu-toggle-btn" onclick="openMobileMenu()" aria-label="Open main menu">
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="icon">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <a href="#" class="logo-link">
+                <span class="sr-only">La Mitzanu</span>
+                <img src="assets/symbol.png" alt="La Mitzanu Logo" class="logo-img" />
+            </a>
+        </nav>
+        <dialog id="mobile-menu">
+            <div tabindex="0" class="dialog-overlay" onclick="closeMobileMenu()">
+                <div class="dialog-panel" onclick="event.stopPropagation()">
+                    <div class="dialog-header">
+                        <div class="nav-container">
+                            <button type="button" class="dialog-close-btn" onclick="closeMobileMenu()" aria-label="Close menu">
+                                <span class="sr-only">Close menu</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="icon">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <a href="#" class="logo-link">
+                            <span class="sr-only">La Mitzanu</span>
+                            <img src="assets/logo.png" alt="La Mitzanu Logo" class="logo-img" />
+                        </a>
+                    </div>
+                    <div class="mobile-menu-links">
+                        <a href="#menu" class="mobile-menu-link" onclick="closeMobileMenu()">Menu</a>
+                        <a href="#about" class="mobile-menu-link" onclick="closeMobileMenu()">About</a>
+                        <a href="#contact" class="mobile-menu-link" onclick="closeMobileMenu()">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </header>
+    
+    <script>
+        function openMobileMenu() {
+            document.getElementById('mobile-menu').showModal();
+        }
+        
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').close();
+        }
+    </script>
+</body>
+</html>
