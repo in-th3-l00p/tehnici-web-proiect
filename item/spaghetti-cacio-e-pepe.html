@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaghetti Cacio e Pepe - La Mitzanu</title>
+    <meta name="description" content="Spaghetti Cacio e Pepe at La Mitzanu in Brasov. Roman classic with pecorino romano cheese and freshly ground black pepper.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/hero.css">
+    <link rel="stylesheet" href="/styles/menu.css">
+    <link rel="stylesheet" href="/styles/about.css">
+    <link rel="stylesheet" href="/styles/contact.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/map.css">
+    <link rel="stylesheet" href="/styles/item.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Global">
+            <div class="nav-container">
+                <div class="nav-links">
+                    <div class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle" aria-haspopup="true">
+                            Menu
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="/#menu">All dishes</a>
+                            <a href="/item/spaghetti-carbonara.html">Spaghetti Carbonara</a>
+                            <a href="/item/spaghetti-bolognese.html">Spaghetti Bolognese</a>
+                            <a href="/item/spaghetti-aglio-e-olio.html">Spaghetti Aglio e Olio</a>
+                            <a href="/item/spaghetti-alle-vongole.html">Spaghetti alle Vongole</a>
+                            <a href="/item/spaghetti-cacio-e-pepe.html">Spaghetti Cacio e Pepe</a>
+                            <a href="/item/spaghetti-puttanesca.html">Spaghetti Puttanesca</a>
+                        </div>
+                    </div>
+                    <a href="/#about" class="nav-link">About</a>
+                    <a href="/#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="mobile-menu-button">
+                    <button type="button" class="menu-toggle-btn" onclick="openMobileMenu()" aria-label="Open main menu">
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="icon">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <a href="/" class="logo-link">
+                <span class="sr-only">La Mitzanu</span>
+                <img src="/assets/symbol.png" alt="La Mitzanu Logo" class="logo-img" />
+            </a>
+        </nav>
+        <dialog id="mobile-menu">
+            <div tabindex="0" class="dialog-overlay" onclick="closeMobileMenu()">
+                <div class="dialog-panel" onclick="event.stopPropagation()">
+                    <div class="dialog-header">
+                        <div class="nav-container">
+                            <button type="button" class="dialog-close-btn" onclick="closeMobileMenu()" aria-label="Close menu">
+                                <span class="sr-only">Close menu</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="icon">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <a href="/" class="logo-link">
+                            <span class="sr-only">La Mitzanu</span>
+                            <img src="/assets/logo.png" alt="La Mitzanu Logo" class="logo-img" />
+                        </a>
+                    </div>
+                    <div class="mobile-menu-links">
+                        <a href="/#menu" class="mobile-menu-link" onclick="closeMobileMenu()">Menu</a>
+                        <a href="/#about" class="mobile-menu-link" onclick="closeMobileMenu()">About</a>
+                        <a href="/#contact" class="mobile-menu-link" onclick="closeMobileMenu()">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </header>
+
+    <main class="item-page-main">
+        <section class="item-hero-section">
+            <div class="item-hero-container">
+                <div class="item-hero-copy">
+                    <h1 class="item-hero-title">Spaghetti Cacio e Pepe</h1>
+                    <p class="item-hero-subtitle">
+                        A pure expression of Roman cuisine: spaghetti dressed in a creamy emulsion of pecorino romano and black pepper,
+                        without cream or butter.
+                    </p>
+                    <div class="item-hero-meta">
+                        <span class="item-hero-price">38 RON</span>
+                        <span class="item-hero-badge">Roman Classic</span>
+                    </div>
+                </div>
+                <div class="item-hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&h=600&fit=crop" alt="Spaghetti Cacio e Pepe" />
+                </div>
+            </div>
+        </section>
+
+        <section class="item-content-section">
+            <div class="item-content-container">
+                <div>
+                    <h2 class="item-section-title">Dish Story</h2>
+                    <p class="item-paragraph">
+                        Cacio e Pepe is all about balance and technique. We finely grate pecorino romano and combine it with hot pasta water
+                        to form a velvety sauce that clings to each strand.
+                    </p>
+                    <p class="item-paragraph">
+                        Generous amounts of freshly cracked black pepper add warmth and complexity, making this seemingly simple dish unforgettable.
+                    </p>
+
+                    <h3 class="item-section-title">Key Ingredients</h3>
+                    <ul class="item-list">
+                        <li>Spaghetti</li>
+                        <li>Pecorino romano DOP</li>
+                        <li>Freshly ground black pepper</li>
+                        <li>Sea salt</li>
+                        <li>Pasta cooking water</li>
+                    </ul>
+                </div>
+
+                <aside class="item-meta-card">
+                    <div class="item-meta-row">
+                        <span class="item-meta-label">Portion size</span>
+                        <span class="item-meta-value">320 g</span>
+                    </div>
+                    <div class="item-meta-row">
+                        <span class="item-meta-label">Perfect with</span>
+                        <span class="item-meta-value">Fresh white or sparkling wine</span>
+                    </div>
+                    <div class="item-meta-row">
+                        <span class="item-meta-label">Preparation time</span>
+                        <span class="item-meta-value">10–12 minutes</span>
+                    </div>
+                    <div class="item-back-link">
+                        <a href="/#menu">← Back to full menu</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>La Mitzanu</h3>
+                    <p>Authentic Italian pasta restaurant in Brasov, Romania. Experience the true taste of Italy.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/#menu">Menu</a></li>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Visit Us</h4>
+                    <p>Strada Republicii 12, Brasov, Romania 500030</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 La Mitzanu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openMobileMenu() {
+            document.getElementById('mobile-menu').showModal();
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').close();
+        }
+    </script>
+</body>
+</html>
+
+
