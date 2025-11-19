@@ -22,9 +22,22 @@
         <nav aria-label="Global">
             <div class="nav-container">
                 <div class="nav-links">
-                    <a href="#menu" class="nav-link">Menu</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <div class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle" aria-haspopup="true">
+                            Menu ↓
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="/#menu">All dishes</a>
+                            <a href="/item/spaghetti-carbonara.html">Spaghetti Carbonara</a>
+                            <a href="/item/spaghetti-bolognese.html">Spaghetti Bolognese</a>
+                            <a href="/item/spaghetti-aglio-e-olio.html">Spaghetti Aglio e Olio</a>
+                            <a href="/item/spaghetti-alle-vongole.html">Spaghetti alle Vongole</a>
+                            <a href="/item/spaghetti-cacio-e-pepe.html">Spaghetti Cacio e Pepe</a>
+                            <a href="/item/spaghetti-puttanesca.html">Spaghetti Puttanesca</a>
+                        </div>
+                    </div>
+                    <a href="/#about" class="nav-link">About</a>
+                    <a href="/#contact" class="nav-link">Contact</a>
                 </div>
                 <div class="mobile-menu-button">
                     <button type="button" class="menu-toggle-btn" onclick="openMobileMenu()" aria-label="Open main menu">
