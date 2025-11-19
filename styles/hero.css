@@ -1,8 +1,6 @@
-/* Hero Section Styles */
-
 .hero-section {
     background: linear-gradient(135deg, #fafafa 0%, #ffffff 50%, #f8f9fa 100%);
-    padding: 3rem 1rem; /* 6x vertical, 1x horizontal */
+    padding: 3rem 1rem;
     position: relative;
     overflow: hidden;
 }
@@ -22,18 +20,18 @@
 
 @media (min-width: 1024px) {
     .hero-section {
-        padding: 6rem 1rem; /* 12x vertical, 1x horizontal */
+        padding: 6rem 1rem;
     }
 }
 
 .hero-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 80rem; /* max-w-7xl - same as nav */
+    max-width: 80rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem; /* 6x base */
+    gap: 3rem;
     position: relative;
     z-index: 1;
 }
@@ -42,7 +40,7 @@
     .hero-container {
         flex-direction: row;
         align-items: center;
-        gap: 5rem; /* 10x base */
+        gap: 5rem;
     }
 }
 
@@ -50,13 +48,13 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* 3x base */
+    gap: 1.5rem;
     animation: fadeInUp 0.8s ease-out;
 }
 
 @media (min-width: 1024px) {
     .hero-content {
-        gap: 2rem; /* 4x base */
+        gap: 2rem;
     }
 }
 
