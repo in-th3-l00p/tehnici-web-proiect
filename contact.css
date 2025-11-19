@@ -1,0 +1,125 @@
+/* Contact Section Styles */
+
+.contact-section {
+    background-color: #ffffff;
+    padding: 3rem 1rem;
+}
+
+@media (min-width: 1024px) {
+    .contact-section {
+        padding: 6rem 1rem;
+    }
+}
+
+.contact-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    padding: 1.5rem;
+    background-color: #f9fafb;
+    border-radius: 0.75rem;
+    border-left: 4px solid #4f46e5;
+    transition: transform 0.3s ease, background-color 0.3s ease 0.1s, border-left-width 0.3s ease 0.2s;
+    position: relative;
+}
+
+.contact-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #4f46e5, #7c3aed);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s ease 0.1s;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+    background-color: #f3f4f6;
+    border-left-width: 6px;
+}
+
+.contact-item:hover::before {
+    transform: scaleY(1);
+}
+
+.contact-item h3 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.75rem 0;
+}
+
+.contact-item p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: #374151;
+    margin: 0;
+}
+
+.contact-map {
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.contact-map::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.contact-map:hover::after {
+    opacity: 1;
+}
+
+.contact-map img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.contact-map:hover img {
+    transform: scale(1.05);
+}
+
+
