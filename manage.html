@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Management - La Mitzanu</title>
+    <link rel="icon" type="image/png" href="/assets/symbol.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/interactive.css">
+    <link rel="stylesheet" href="/styles/manage.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Global">
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/#menu" class="nav-link">Menu</a>
+                    <a href="/manage.html" class="nav-link">Manage</a>
+                </div>
+                <div class="nav-actions">
+                    <label class="theme-switch">
+                        <input type="checkbox" id="theme-switcher">
+                        <span class="theme-slider"></span>
+                    </label>
+                </div>
+            </div>
+            <a href="/" class="logo-link">
+                <span class="sr-only">La Mitzanu</span>
+                <img src="assets/symbol.png" alt="La Mitzanu Logo" class="logo-img">
+            </a>
+        </nav>
+    </header>
+
+    <main class="manage-main">
+        <div class="manage-container">
+            <div class="manage-header">
+                <h1>Restaurant Management</h1>
+                <div class="manage-tabs">
+                    <button class="tab-btn active" data-tab="tables">Tables</button>
+                    <button class="tab-btn" data-tab="menu">Menu Items</button>
+                </div>
+            </div>
+
+            <div id="tables-tab" class="tab-content active">
+                <div class="section-actions">
+                    <h2>Table Management</h2>
+                    <button class="add-btn" onclick="openAddTableModal()">Add Table</button>
+                </div>
+                <div id="tables-grid" class="tables-grid"></div>
+            </div>
+
+            <div id="menu-tab" class="tab-content">
+                <div class="section-actions">
+                    <h2>Menu Management</h2>
+                    <button class="add-btn" onclick="openAddMenuModal()">Add Menu Item</button>
+                </div>
+                <div id="menu-list" class="menu-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <dialog id="add-table-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAddTableModal()">×</button>
+            <h2>Add Table</h2>
+            <form id="add-table-form">
+                <div class="form-group">
+                    <label for="table-number">Table Number</label>
+                    <input type="number" id="table-number" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="table-capacity">Capacity (seats)</label>
+                    <input type="number" id="table-capacity" min="1" max="20" value="4" required>
+                </div>
+                <div class="form-group">
+                    <label for="table-status">Status</label>
+                    <select id="table-status" required>
+                        <option value="available">Available</option>
+                        <option value="occupied">Occupied</option>
+                        <option value="reserved">Reserved</option>
+                        <option value="maintenance">Maintenance</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="table-location">Location</label>
+                    <select id="table-location" required>
+                        <option value="indoor">Indoor</option>
+                        <option value="outdoor">Outdoor</option>
+                        <option value="terrace">Terrace</option>
+                        <option value="vip">VIP Area</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Add Table</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="edit-table-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEditTableModal()">×</button>
+            <h2>Edit Table</h2>
+            <form id="edit-table-form">
+                <input type="hidden" id="edit-table-id">
+                <div class="form-group">
+                    <label for="edit-table-number">Table Number</label>
+                    <input type="number" id="edit-table-number" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-table-capacity">Capacity (seats)</label>
+                    <input type="number" id="edit-table-capacity" min="1" max="20" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-table-status">Status</label>
+                    <select id="edit-table-status" required>
+                        <option value="available">Available</option>
+                        <option value="occupied">Occupied</option>
+                        <option value="reserved">Reserved</option>
+                        <option value="maintenance">Maintenance</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-table-location">Location</label>
+                    <select id="edit-table-location" required>
+                        <option value="indoor">Indoor</option>
+                        <option value="outdoor">Outdoor</option>
+                        <option value="terrace">Terrace</option>
+                        <option value="vip">VIP Area</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Update Table</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="add-menu-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAddMenuModal()">×</button>
+            <h2>Add Menu Item</h2>
+            <form id="add-menu-form">
+                <div class="form-group">
+                    <label for="menu-name">Name</label>
+                    <input type="text" id="menu-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="menu-description">Description</label>
+                    <textarea id="menu-description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="menu-price">Price (RON)</label>
+                    <input type="number" id="menu-price" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="menu-category">Category</label>
+                    <select id="menu-category" required>
+                        <option value="classic">Classic</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="seafood">Seafood</option>
+                        <option value="special">Special</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="menu-image">Image URL</label>
+                    <input type="url" id="menu-image" required>
+                </div>
+                <button type="submit" class="submit-btn">Add Item</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="edit-menu-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEditMenuModal()">×</button>
+            <h2>Edit Menu Item</h2>
+            <form id="edit-menu-form">
+                <input type="hidden" id="edit-menu-id">
+                <div class="form-group">
+                    <label for="edit-menu-name">Name</label>
+                    <input type="text" id="edit-menu-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-menu-description">Description</label>
+                    <textarea id="edit-menu-description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="edit-menu-price">Price (RON)</label>
+                    <input type="number" id="edit-menu-price" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-menu-category">Category</label>
+                    <select id="edit-menu-category" required>
+                        <option value="classic">Classic</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="seafood">Seafood</option>
+                        <option value="special">Special</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-menu-image">Image URL</label>
+                    <input type="url" id="edit-menu-image" required>
+                </div>
+                <button type="submit" class="submit-btn">Update Item</button>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="/scripts/storage.js"></script>
+    <script src="/scripts/ui.js"></script>
+    <script src="/scripts/tables.js"></script>
+    <script src="/scripts/menu-manager.js"></script>
+    <script src="/scripts/manage-main.js"></script>
+</body>
+</html>
