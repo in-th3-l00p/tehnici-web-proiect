@@ -1,0 +1,10 @@
+[
+    { "id": 1, "number": 1, "capacity": 2, "status": "available", "location": "indoor" },
+    { "id": 2, "number": 2, "capacity": 4, "status": "available", "location": "indoor" },
+    { "id": 3, "number": 3, "capacity": 4, "status": "occupied", "location": "indoor" },
+    { "id": 4, "number": 4, "capacity": 6, "status": "reserved", "location": "indoor" },
+    { "id": 5, "number": 5, "capacity": 2, "status": "available", "location": "outdoor" },
+    { "id": 6, "number": 6, "capacity": 4, "status": "available", "location": "outdoor" },
+    { "id": 7, "number": 7, "capacity": 8, "status": "available", "location": "terrace" },
+    { "id": 8, "number": 8, "capacity": 6, "status": "maintenance", "location": "vip" }
+]

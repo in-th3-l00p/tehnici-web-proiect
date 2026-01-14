@@ -1,8 +1,8 @@
-function initManagePage() {
+async function initManagePage() {
     loadTheme();
     initThemeSwitcher();
-    initializeTables();
-    initializeMenu();
+    await initializeTables();
+    await initializeMenu();
     renderTables();
     renderMenu();
     initTabs();
