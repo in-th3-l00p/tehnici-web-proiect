@@ -562,3 +562,9 @@ header.scrolled {
         min-width: 100%;
     }
 }
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
