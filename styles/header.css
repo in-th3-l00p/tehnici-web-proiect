@@ -269,3 +269,8 @@ dialog::backdrop {
         border-radius: 0.25rem;
     }
 }
+
+.nav-actions {
+    margin-left: auto;
+    margin-right: 2rem;
+}
